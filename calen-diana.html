@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calen</title>
+  <link rel="stylesheet" href="css/calen.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/34b5bf92a4.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="src/work-tattoo/logo2.svg">
+</head>
+
+<body>
+  <main>
+
+    <div class="left-login">
+      <a href="Diana.html"><i class="fa-sharp fa-solid fa-arrow-left fa-2x"></a></i>
+      <h1>Marque um Horário<br> E aproveite!!</h1><br>
+      <img class="left-login-image" src="src/work-tattoo/logo1.png">
+    </div>
+
+    <div class="container">
+      <div class="left">
+        <div class="calendar">
+          <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">december 2015</div>
+            <i class="fas fa-angle-right next"></i>
+          </div>
+          <div class="weekdays">
+            <div>Domingo</div>
+            <div>Segunda</div>
+            <div>Terça</div>
+            <div>Quarta</div>
+            <div>Quinta</div>
+            <div>Sexta</div>
+            <div>Sábado</div>
+          </div>
+          <div class="days"></div>
+          <div class="goto-today">
+            <div class="goto">
+              <input type="text" placeholder="mm/yyyy" class="date-input" />
+              <button class="goto-btn">Pesquisar</button>
+            </div>
+            <button class="today-btn">Hoje</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="today-date">
+          <div class="event-day">Segunda</div>
+          <div class="event-date">12th december 2022</div>
+        </div>
+        <div class="events"></div>
+        <div class="add-event-wrapper">
+          <div class="add-event-header">
+            <div class="title">Adicionar Evento</div>
+            <i class="fas fa-times close"></i>
+          </div>
+          <div class="add-event-body">
+            <div class="add-event-input">
+              <input type="text" placeholder="Nome do Evento" class="event-name" />
+            </div>
+            <div class="add-event-input">
+              <input type="text" placeholder="Tempo inicial" class="event-time-from" />
+            </div>
+            <div class="add-event-input">
+              <input type="text" placeholder="Tempo final" class="event-time-to" />
+            </div>
+          </div>
+          <div class="add-event-footer">
+            <button class="add-event-btn">Adicionar Evento</button>
+          </div>
+        </div>
+      </div>
+      <button class="add-event">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </main>
+  <script src="js/calen_diana.js"></script>
+</body>
+
+</html>

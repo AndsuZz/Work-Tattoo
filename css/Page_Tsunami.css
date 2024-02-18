@@ -1,0 +1,809 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+ html, body{
+    width: 100%; /* Alterado para 100% para tornar a página responsiva */
+    overflow-x: hidden;
+    max-width: 100%;
+    height: auto;
+ }
+
+
+body {
+
+    font-family: "Century Gothic", sans-serif;
+    /* flex: 1 0 auto; Adicionado ppara esticar o corpo para preencher o espaço disponível */
+    padding: 0;
+    margin: 0;
+    background-color: var(--body-color);
+    overflow-x: hidden;
+    height: auto;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(body_tsunami2.png);
+}
+.foto-tsunami-right{
+    width: 400px;
+    margin-right: 30px;
+    border-radius: 5%;
+    float: right;
+    border: 4px solid rgba(102, 102, 102, 0.8);
+}
+
+.descricao-sobre-tsunami{
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 10%;
+    max-width: 1400px;
+    font-family: century gothic;
+    text-align: center;
+}
+ 
+.container-discr{
+    margin: auto;
+    font-family: century gothic;
+    max-width: 1000px;
+    justify-content: center;
+    margin:center;
+    margin-top: 5%;
+    margin-right: 250px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    max-width: 800px;
+    text-align: justify;
+    background:rgba(166, 166, 166, 0.8);
+
+
+}
+
+
+body.dark .container-discr{
+    
+    background: var(--nav-color);
+}
+
+body.dark .foto-tsunami-left{
+    border: solid 4px rgb(32, 58, 79, 0.9);
+}
+
+body.dark .foto-tsunami-right{
+    border: solid 4px rgb(32, 58, 79, 0.9);
+}
+
+body.dark .container-discr2{
+    background: var(--nav-color);
+}
+
+body.dark .container-sobre-tsunami-discr-left{
+    background: var(--nav-color);
+}
+
+.container-discr2{
+    margin: auto;
+    font-family: century gothic;
+    max-width: 1000px;
+    justify-content: center;
+    margin:center;
+    margin-top: 10%;
+    margin-right: 250px;
+    max-width: 800px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: justify;
+    background:rgba(166, 166, 166, 0.8);
+
+
+}
+
+
+.descricao-sobre-tsunami2{
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 5%;
+    max-width: 1400px;
+    font-family: century gothic;
+    text-align: center;
+}
+ 
+
+
+.container-sobre-tsunami-discr-left{
+    margin: auto;
+    font-family: century gothic;
+    max-width: 1000px;
+    justify-content: center;
+    margin:center;
+    margin-top: 10%;
+    margin-left: 250px;
+    max-width: 800px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: justify;
+    background:rgba(166, 166, 166, 0.8);
+    
+}
+
+.foto-tsunami-left{
+    width: 400px;
+    margin-left: 30px;
+    border-radius: 5%;
+    float: left;
+    border: 4px solid rgba(102, 102, 102, 0.8);
+
+}
+
+.descricao-sobre-tsunami-left{
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 10%;
+    font-family: century gothic;
+    text-align: center;
+}
+
+
+.image-home-tsunami {
+    /* Altere a URL para a imagem desejada */
+    position: relative;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    height: auto;
+    animation: home 2s;
+    opacity: 1; 
+}
+
+
+.image-home-tsunami::before {
+    /* Altere a URL para a imagem desejada */
+    position: relative;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    transition: opacity 4s ease;
+    height: auto;
+}
+
+.image-home-tsunami.visible::before {
+    opacity: 1; /* Aplicar o blur somente à pseudo-imagem */
+  }
+    
+
+
+@keyframes home {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0%); }
+  }
+
+
+/* .image-home-tsunami2 {
+
+    background-image: url("studio_tsunami.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    width: 100%;
+    min-height: calc(100vh);
+} *//* Estilo da imagem da página inicial (tsunami3) */
+.image-home-tsunami3 {
+    position: relative;
+    width: 100%;
+    min-height: calc(110vh);
+    opacity: 1;
+    z-index: 2;
+    transition: opacity 1s ease;
+  }
+  
+  .image-home-tsunami3::before {
+    /* Existing styles for background image */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("quasros.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    opacity: 0;
+    transition: opacity 4s ease;
+    z-index: -1;
+  }
+  /* Estilo para o conteúdo do quadro tsunami bio */
+  .discri-quadro-tsunami-bio {
+    max-width: 700px;
+    margin-right: 0;
+    padding-right: 5px;
+    grid: 2;
+  }
+  
+  /* Estilo para o conteúdo do quadro tsunami */
+  .discri-quadro-tsunami {
+    padding-right: 5px;
+    text-align: right;
+    box-sizing: border-box;
+    color: #f7faf9;
+    max-width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 3; /* Coloque o texto na frente da imagem */
+  }
+  
+  /* Classe .visible para mostrar o quadro tsunami com animação */
+  .discri-quadro-tsunami.visible {
+    animation: example 4s;
+    opacity: 1;
+  }
+  
+  
+  .image-home-tsunami3.visible::before {
+    opacity: 1; /* Aplicar o blur somente à pseudo-imagem */
+  }
+  
+  /* Animação "example" */
+  @keyframes example {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0%); }
+  }
+  
+
+  .fa-location-dot{
+    color: #f7faf9;
+  }
+ 
+/* 
+    .discri-imagem-home{
+        position: relative;
+        text-align: center;
+        color: #FFF;
+        margin-bottom: 1200px;
+        opacity: 0;
+        
+    } */
+    
+
+/* 
+.image-home-tsunami4 {
+    background-image: url("2.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    width: 100%;
+    min-height: calc(70vh);
+}
+
+
+.image-home-tsunami5 {
+  
+    background-image: url("3.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    width: 100%;
+    min-height: calc(70vh);
+} */
+    body.dark .container {
+      
+        padding: 4px;
+        background: rgb(43, 78, 107, 0.9);
+    }
+
+    .container {
+        transition: opacity 4s ease;
+        animation: intro 4s;
+        opacity: 1; 
+        padding: 4px;
+        background: rgba(166, 166, 166, 0.808);
+    border-radius: 20px;
+    
+    }
+
+    body.dark .container-sobre-tsunami {
+       
+        position: relative;
+        padding: 8px;
+        text-align: justify;
+        background: rgba(43, 78, 107, 0.979);
+    }
+
+    .container-sobre-tsunami {
+        padding: 8px;
+        position: relative;
+        background: rgb(166, 166, 166, 0.6);
+    }
+
+    .tsunami-slide{
+        max-width: 1800px;
+        text-align: justify;
+    } 
+
+    #home {
+        text-decoration: none;
+        color: #f7faf9;
+     font-family: 'Century gothic';
+     
+ 
+    }
+
+    #studio {
+        display: flex;
+        color: #f7faf9;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 18;
+      
+
+    }
+
+    .descricao_tsunami-slide {
+        font-size: 0px;
+        margin-top: -30px;
+        
+        
+    }
+            .descricao-tsunami {
+                border-radius: 20px;
+                border: 1px solid #fff;
+                font-size: 20px;
+                margin: auto;
+                max-width: 1400px;
+                margin-bottom: 50px;
+                animation: intro 4s;
+                opacity: 1;
+            font-family: 'Century gothic';
+                text-align: justify;
+            } 
+
+            .descricao-tsunami::before {
+                transition: opacity 4s ease;
+                border-radius: 20px;
+                border: 1px solid #fff;
+                font-size: 20px;
+                margin: auto;
+                max-width: 1400px;
+                margin-bottom: 50px;
+            font-family: 'Century gothic';
+                text-align: justify;
+            } 
+
+            
+
+            .container.visible::before {
+                opacity: 0; /* Aplicar o blur somente à pseudo-imagem */
+            }
+            .discr-tsunami.visible{
+                animation: intro 4s;
+                opacity: 1; 
+            }
+            .container.visible{
+        animation: intro 4s;
+                opacity: 1; 
+
+            }
+
+            @keyframes intro {
+                from { opacity: 0; transform: translateX(-100%); }
+                to { opacity: 1; transform: translateX(0%); }
+            }
+ 
+
+ /* body.dark .container {
+     border-top-right-radius: 5%; 
+    width: calc(100% + 40px);  Adicionei 40px para que o container ultrapasse a tela 
+    margin-bottom: 5%;
+    margin-left: -20px;  Margem negativa para o container ultrapassar a tela pela esquerda 
+    transform: rotate(-4deg);
+    padding: 4px;
+    padding-bottom: 30px;
+    background: rgba(43, 78, 107, 1);
+}
+
+.container {
+    border-top-right-radius: 5%;
+   width: calc(100% + 40px); Adicionei 40px para que o container ultrapasse a tela 
+   margin-bottom: 5%;
+   margin-left: -20px;  Margem negativa para o container ultrapassar a tela pela esquerda 
+   transform: rotate(-4deg);
+   padding: 4px;
+   padding-bottom: 30px;
+
+    background: rgba(166, 166, 166, 0.808);
+  
+}
+
+body.dark .container-sobre-tsunami {
+    position: relative;
+    padding: 4px;
+    text-align: justify;
+    background: rgba(43, 78, 107, 0.979);
+}
+
+.container-sobre-tsunami {
+    padding: 4px;
+    position: relative;
+    background: rgba(166, 166, 166, 0.6);
+}
+
+#home {
+    text-decoration: none;
+    color: #f7faf9;
+    font-family: 'Century Gothic';
+}
+
+#studio {
+    overflow: hidden;
+    display: flex;
+    color: #f7faf9;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;  Adicionei "px" para definir a unidade de medida correta
+}
+
+.descricao_tsunami-slide {
+    font-size: 0px;
+    margin-top: -30px;
+}
+
+.discr-tsunami {
+    margin: auto;
+    padding: 4px;
+    margin-top: 3%;
+    overflow: hidden;
+    text-align: justify;
+    transform: rotate(3deg); 
+
+
+} */
+
+.p2 {
+        margin: auto;
+        max-width: 1200px;
+        color: var(--p-color);
+        font-size: 20px;
+
+
+    }
+
+    p {
+        font-weight:100;
+        margin: auto;
+        max-width: 1850px;
+        font-size: 28px;
+        color: var(--text-color);
+
+
+    }
+
+
+
+    .fa-marker {
+        font-size: 30px;
+    }
+
+    .darkLight-searchBox .dark-light,
+    .darkLight-searchBox .searchToggle {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+    }
+
+    .dark-light i,
+    .searchToggle i {
+        /* QUANDO VC CLICAR NO BOTÃO DE DAR MODE IRÁ MUDAR A POSIÇÃO E O DARK   */
+        position: absolute;
+        color: var(--text-color);
+        font-size: 22px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dark-light i.sun {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .dark-light.active i.sun {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .dark-light.active i.moon {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 4px;
+        color: #ffffff;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 65px;
+        font-size: 20px;
+        background-color: var(--nav-color);
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+   
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-evenly;
+        height: 100%; /* Definindo altura como 100% para que os itens do menu ocupem toda a altura */
+    }
+
+
+    nav ul li {
+        display: inline-block; /* Alterado para inline-block para os itens ficarem na mesma linha */
+    }
+    
+    a {
+        text-decoration: none;
+        color: #f7faf9;
+     font-family: 'Century gothic';
+        font-weight: 900;
+
+    }
+
+    footer ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--ul-color);
+        text-decoration: none;
+        box-shadow: none;
+        padding: 4px;
+        width: 100%;
+        text-justify: 10px;
+        color: #ffffff;
+    }
+
+    .fa-instagram {
+        margin-left: 10px;
+    }
+
+    .fa-facebook {
+        margin-left: 10px;
+    }
+
+    .fa-phone-volume {
+        margin-left: 10px;
+    }
+
+    .links-tsunami li a {
+        position: relative;
+
+    }
+
+    .links-tsunami li a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 2px;
+        background-color: rgb(255, 255, 255);;
+        border-radius: 4px;
+        scale: 0 1;
+        transform-origin: center;
+        transition: scale 0.25s;
+    }
+
+    .links-tsunami li:hover a::before {
+        scale: 1;
+        transform-origin: center;
+     }
+
+        footer {
+            background-color: var(--footer-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 25px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
+            flex-shrink: 0; /*Impede o encolhimento do footer */
+        }
+        
+        footer h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        footer ul li {
+            margin: 0 10px;
+        }
+        
+        footer ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer ul li a:hover {
+            color: #fff;
+        } 
+
+
+    .artes {
+            
+        font-size: 20px;
+     font-family: 'Century gothic';
+        text-align: center;
+    }
+
+    .nome {
+        font-size: 35px;
+     
+        text-align: center;
+
+    }
+
+        
+    /* Mantém as propriedades existentes para .flex */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .flex {
+    text-align: center;
+    box-sizing: border-box;
+    margin: 1rem;
+    width: calc((100% - 6rem) / 3);
+    font-size: 15px;
+    margin-top: 75px;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Adiciona a classe .animation com a animação e a opacidade */
+  .flex.animation {
+    animation: example 4s; /* Nome da animação e duração */
+    opacity: 1;
+  }
+  
+
+  /* Media queries para ajustar o layout responsivo */
+  @media screen and (max-width: 768px) {
+    .flex {
+      width: calc((100% - 4rem) / 2);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .flex {
+      width: calc(100% - 2rem);
+    }
+  }
+  
+ 
+
+    .card {
+        position: relative;
+        width: 350px;
+        height: 380px;
+        background-color: #000;
+        overflow: hidden;
+        border: 2px solid #fff;
+        
+    }
+
+    .card__image {
+        height: 380px;
+        width: 350px;
+        object-fit: cover;
+        scale: 1.30;
+        transition: opacity 0.25s, scale 0.35s;
+    }
+
+    .card:hover .card__image {
+        opacity: 0.7;
+        scale: 1;
+    }
+
+    .card__body {
+        position: absolute;
+        inset: 0;
+        padding: 50px;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+        justify-content: center;
+    }
+
+    .card:hover .card__body::before {
+        opacity: 1;
+        scale: 1;
+    }
+
+    .card__title {
+        color: #fff;
+        margin-top: 100px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .card__description {
+        font-size: 25px;
+        opacity: 0;
+        translate: -25px;
+        margin-bottom: -50px;
+        color: #FFF;
+        transition: opacity 0.25s, translate 0.25s;
+    }
+
+    .card__description_text_long{
+        font-size: 23px;
+        opacity: 0;
+        translate: -25px;
+        margin-bottom: -50px;
+        color: #FFF;
+        transition: opacity 0.25s, translate 0.25s;
+    }
+
+    .card:hover .card__description_text_long {
+        opacity: 1;
+        translate: 0;
+    }
+    .card:hover .card__description {
+        opacity: 1;
+        translate: 0;
+    }
+
+    @media (max-width: 1170px) {
+        .flex {
+          width: 50%;
+        
+        }
+        
+        .card {
+          width: 450px;
+          height: 400px;
+          
+        }
+        
+        .card__image {
+          width: 100%;
+          height: 100%;
+        }
+      }

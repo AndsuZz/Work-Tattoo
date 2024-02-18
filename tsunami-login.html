@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsunami</title>
+    <link rel="stylesheet" href="css/Page_Tsunami.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/34b5bf92a4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=FontName" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/34b5bf92a4.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="src/work-tattoo/logo2.svg">
+    <script src="js/loader.js"></script>
+    <script src="js/loader_tattoo.js"></script>
+    <link rel="stylesheet" href="css/loader-tsunami.css">
+</head>
+
+<body>
+    <!-- background="src/Tsunami/body_tsunami2.png" -->
+
+    <div class="loader">
+        <div class="loader-bottom"></div>
+        <div class="loader-cup">
+            <div class="loader-liquid"></div>
+        </div>
+
+        <div class="tattoo-machine">
+            <img src="src/loader/loader_work_tattoo.png" alt="" srcset="">
+        </div>
+
+        <P class="p">
+            CARREGANDO
+        <div class="col-3">
+            <div class="snippet" data-title="dot-falling">
+                <div class="stage">
+                    <div class="dot-falling"></div>
+                </div>
+            </div>
+        </div>
+        </P>
+    </div>
+
+
+
+    <nav>
+        <ul class="links-tsunami">
+            <li><a href="home-login.php">Home</a></li>
+            <li id="artista"><a href="catalogo_tsunami.html">Sobre o tatuador</a></li>
+            <li>
+                <div class="darkLight-searchBox">
+                    <div class="dark-light">
+                        <i class='bx bx-moon moon'></i>
+                        <i class='bx bx-sun sun'></i>
+                    </div>
+            </li>
+        </ul>
+    </nav>
+    </div>
+
+    <Script>
+        const body = document.querySelector("body"),
+            nav = document.querySelector("nav"),
+            modeToggle = document.querySelector(".dark-light"),
+            searchToggle = document.querySelector(".searchToggle"),
+            sidebarOpen = document.querySelector(".sidebarOpen"),
+            sidebarClose = document.querySelector(".sidebarClose");
+
+        let getMode = localStorage.getItem("mode");
+        if (getMode && getMode === "dark-mode") {
+            body.classList.add("dark");
+        }
+
+        // js code to toggle dark and light mode
+        modeToggle.addEventListener("click", () => {
+            modeToggle.classList.toggle("active");
+            body.classList.toggle("dark");
+
+            // js code to keep user selected mode even page refresh or file reopen
+            if (!body.classList.contains("dark")) {
+                localStorage.setItem("mode", "light-mode");
+            } else {
+                localStorage.setItem("mode", "dark-mode");
+            }
+        });
+    </Script>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+
+
+    <script>
+        function isElementInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.bottom >= 0 &&
+                rect.right >= 0 &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function addAnimationClass() {
+            var imageElement = document.querySelector('.image-home-tsunami');
+            imageElement.classList.add('visible');
+        }
+
+
+        window.addEventListener('scroll', scrollHandler);
+    </script>
+
+
+    <div class="artes">
+        <main class="main">
+
+            <section id="studio">
+                <h2>Sobre o nosso studio</h2><br>
+            </section>
+            <h2>
+            <img src="src/Tsunami/studio-tsunami.svg" class="image-home-tsunami">
+            <i class="fa-solid fa-location-dot"><a href="localização.html" id="localtsu" class="discri-imagem-home">
+                Localização Studio
+                </a></i>
+            </h2>
+            
+            <script>
+                function isElementInViewport(element) {
+                    var rect = element.getBoundingClientRect();
+                    return (
+                        rect.bottom >= 0 &&
+                        rect.right >= 0 &&
+                        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+            
+                function addAnimationClassOnScroll() {
+                    var animatedElement = document.getElementById('animatedElement');
+                    if (isElementInViewport(animatedElement)) {
+                        animatedElement.classList.add('visible'); // Adicione a classe ao elemento pai
+                        window.removeEventListener('scroll', addAnimationClassOnScroll);
+                    }
+                }
+            
+                window.addEventListener('scroll', addAnimationClassOnScroll);
+            </script>
+               
+        
+            <h2>
+                <section id="studio">
+
+                    
+
+                    <br>
+                    <br>
+                    <div class="descricao-tsunami" id="animatedElement">
+                        <div class="container" id="animatedElement2">
+                            <h2>
+                                <p class="discr-tsunami">Bem-vindo ao meu estúdio de tatuagem, um lugar onde a arte
+                                    ganha vida e histórias são
+                                    contadas na pele. Localizado em um espaço acolhedor e cheio de personalidade, meu
+                                    estúdio é um refúgio para aqueles que buscam expressar sua individualidade de
+                                    maneira
+                                    única.
+                                    <br>
+                                    <br>
+                                    Ao entrar, você será recebido por um ambiente que transmite uma atmosfera misteriosa
+                                    e
+                                    ao mesmo tempo cativante. As paredes são adornadas com ilustrações que refletem a
+                                    essência do dark-work e do old school, criando uma atmosfera imersiva onde a
+                                    criatividade flui livremente.
+                                    <br>
+                                    <br>
+                                    Meu estúdio está equipado com as mais modernas e higiênicas instala-rightções,
+                                    garantindo um
+                                    ambiente seguro para todos os meus clientes. Cada estação de trabalho é
+                                    cuidadosamente
+                                    organizada, repleta de instrumentos de qualidade e tintas vibrantes, prontos para
+                                    dar
+                                    vida às mais incríveis criações.
+                                    <br><br>
+                                    Além disso, a equipe do estúdio é composta por artistas talentosos e apaixonados,
+                                    prontos para transformar suas ideias em realidade. Juntos, compartilhamos a visão de
+                                    criar tatuagens que transcendem a pele, deixando uma marca profunda e duradoura na
+                                    vida
+                                    de cada indivíduo.
+                                </p>
+                            </h2>
+                        </div>
+                    </div>
+    </div>
+
+
+    
+    <!-- 
+   <div>
+    <img class="image-home-tsunami2">
+</div> -->
+
+
+    <script>
+        function isElementInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.bottom >= 0 &&
+                rect.right >= 0 &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function addAnimationClass() {
+            var element = document.querySelector('.discri-quadro-tsunami');
+            element.classList.add('visible');
+            var imageElement = document.querySelector('.image-home-tsunami3');
+            imageElement.classList.add('visible');
+        }
+
+        function scrollHandler() {  
+            var imageElement = document.querySelector('.image-home-tsunami3');
+            if (isElementInViewport(imageElement)) {
+                addAnimationClass();
+                window.removeEventListener('scroll', scrollHandler);
+            }
+        }
+
+        window.addEventListener('scroll', scrollHandler);
+    </script>
+
+    
+    <div class="image-home-tsunami3" =>
+        <h1 class="discri-quadro-tsunami">
+            Fazendo história no mundo da tatuagem desde
+            <strong>1980</strong><br><br>
+        <p class="discri-quadro-tsunami-bio">
+            <strong>ACESSIBILIDADE</strong>
+            <br>
+            Somos pioneiros na adequação dos espaços do estúdio para o portador de mobilidade reduzida. Temos acesso
+            adaptado desde a recepção até uma sala exclusiva de atendimento.
+        </p><br>
+            <p class="discri-quadro-tsunami-bio">
+            <strong> BIOSSEGURANÇA </strong>
+            <br>
+            A Led’s Tattoo é certificada pela Vigilância Sanitária atuando sob rígidas normas de biossegurança e
+            assepsia. Possui uma sala exclusiva para a esterilização dos equipamentos.
+        </p>
+        </h1>
+    </div>
+
+
+
+
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            function isElementInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                return (
+                    rect.bottom >= 0 &&
+                    rect.right >= 0 &&
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+        
+            function addAnimationClass() {
+                var cardContainers = document.querySelectorAll('.flex');
+                cardContainers.forEach(function (container) {
+                    container.classList.add('animation');
+                });
+            }
+        
+            function scrollHandler() {  
+                var cardContainers = document.querySelectorAll('.flex');
+                cardContainers.forEach(function (container) {
+                    if (isElementInViewport(container)) {
+                        addAnimationClass();
+                    }
+                });
+            }
+        
+            window.addEventListener('scroll', scrollHandler);
+        });
+    </script>   
+    <div class="flex-container">
+        <div class="flex">
+            <figure class="card">
+                <img src="src/tattoo/tattoo_tsunami/img1.jpg" width="450px" height="400px"
+                    class="card__image" />
+                <figcaption class="card__body">
+                    <p class="card__description">
+                        10cm $300 até 500
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="flex">
+            <figure class="card">
+                <img src="src/tattoo/tattoo_tsunami/img2.jpg" width="450px" height="400px"
+                    class="card__image" />
+                <figcaption class="card__body">
+                    <p class="card__description">
+                        25cm $700 até 1000
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="flex">
+            <figure class="card">
+                <img src="src/tattoo/tattoo_tsunami/img3.jpg" width="450px" height="400px"
+                    class="card__image" />
+                <figcaption class="card__body">
+                    <p class="card__description_text_long">
+                        30cm $1200
+                        até 1600
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="flex">
+            <figure class="card">
+                <img src="src/tattoo/tattoo_tsunami/img4.jpg" width="450px" height="400px"
+                    class="card__image" />
+                <figcaption class="card__body">
+                    <p class="card__description">
+                        Flash $150 até 250
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="flex">
+            <figure class="card">
+                <img src="src/tattoo/tattoo_tsunami/img5.jpg" width="450px" height="400px"
+                    class="card__image" />
+                <figcaption class="card__body">
+                    <p class="card__description">
+                        Flash $150 até 250
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="flex">
+            <figure class="card">
+                <img src="src/tattoo/tattoo_tsunami/img6.jpg" width="450px" height="400px"
+                    class="card__image" />
+                <figcaption class="card__body">
+                    <p class="card__description">
+                        Flash $150 até 250
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+
+<section id="studio">
+    <h2>Para marcar Horario é preciso criar uma conta</h2>
+    <br>
+<h3> <i class="fa-sharp fa-solid fa-marker"><a href="horario_cli_tsunami.html" id="cadastro"> Marcar
+    Horario</a></i>
+</h3>
+<br>
+</section>
+    <br>
+    <br>
+    </section>
+
+
+    <footer>
+        <h1>CONTATO</h1>
+        <ul>
+
+            <li><i class="fa-brands fa-instagram"><a href="https://www.instagram.com/"> Instagram Tsunami Tattoo</a></i></li>
+
+            <li><i class="fa-brands fa-facebook"><a href="https://www.facebook.com/"> Facebook Tsunami Tattoo</a></i></li>
+
+            <li><i class="fa-solid fa-phone-volume"><a> (45) 3264-4942 Whatsapp Tsunami</a></i></li>
+
+        </ul>
+
+    </footer>
+</body>
+
+</html>
