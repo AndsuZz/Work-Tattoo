@@ -1,0 +1,218 @@
+:root {
+    --body-color: rgb(0, 147, 173);
+    --body-loader:  rgb(23, 168, 195);
+    --nav-color: rgb(166, 166, 166, 0.8);
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --ul-color: rgb(43, 78, 107, 0.0);
+    --footer-color: rgb(166, 166, 166, 0.8);
+    --p-color: #000000;
+    --fundo-batoque: rgba(255, 255, 255, 0.1);
+    --borda-batoque: rgba(255, 255, 255, 0.3);
+    --bottom-batoque: rgba(255, 255, 255, 0.4);
+    --liquido-batoque: rgb(0,0,0,0.7);
+}
+
+body.dark {
+  --body-loader: #0d2031;
+    --body-color: #0d2031;
+    --nav-color: rgb(43, 78, 107, 0.9);
+    --side-nav: rgb(43, 78, 107, 0.9);
+    --footer-color: rgb(43, 78, 107, 0.9);
+    --ul-color: rgb(43, 78, 107, 0.0);
+    --text-color: #FFF;
+    --search-text: #010718;
+    --p-color: #ffffff;
+   
+    
+}
+  html, body{
+    width: 1920px;  
+  }
+  
+  
+  body {
+  
+    font-family: century gothic;
+    color: #03031a;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 100px;
+    max-height: 100%;
+    background-color: var(--body-color);
+    max-width: 100%;
+    overflow-x: hidden;
+    /*arruma o html se estiver desregulado como footer*/
+  }
+  
+  .loader{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 55vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--body-loader);
+    transition: opacity 4.50s, visibility 2.50s;
+  }
+  
+  
+  .loader-cup {
+    width: 80px;
+    height: 70px;
+    background-color: var(--fundo-batoque);
+    border: 7px solid var(--borda-batoque);
+    border-bottom: 7px solid var(--borda-batoque);
+    position: relative;
+    overflow: hidden;
+    border-top: none;
+    margin-left: 930px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .loader-bottom{
+    position: absolute;
+    margin-left: 30px;
+    width: 140px;
+    margin-bottom: 75px;
+    height: 150px;
+    border-bottom: 7px solid var(--bottom-batoque);
+    border-bottom-left-radius: 5px ;
+    border-bottom-right-radius: 5px ;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px ;
+  }
+  .loader-liquid {
+    width: 100%;
+    height: 0;
+    background-color: var(--liquido-batoque);
+    position: absolute;
+    bottom: 0;
+    animation: liquidAnimation 3.50s infinite;
+  }
+  
+  
+  .loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* .loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #fff;
+    border-top-color: #FF3131;
+    border-radius: 50%;
+    animation: loading 4s ease infinite;
+  } */
+  
+  
+  @keyframes liquidAnimation {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 75%;
+    }
+    80% {
+      height: 0;
+    }
+  }
+  
+  .tattoo-machine {
+    margin-bottom: 260px;
+    position: relative;
+    margin-left: -70px;
+    
+  }
+  
+  .p{
+    position: absolute;
+    color: #ffffff;
+    font-family: century gothic;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+  }
+  
+  
+  .dot-falling {
+    position: absolute;
+    left: -9999px;
+    margin-top: 95px;
+    margin-left: 1085px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color:  rgb(0, 0, 0, 0.7);
+    color:  rgb(0, 0, 0, 0.7);
+    box-shadow: 9999px 0 0 0  rgb(0, 0, 0, 0.7);
+    animation: dot-falling 1s infinite linear;
+    animation-delay: 0.1s;
+  }
+  .dot-falling::before, .dot-falling::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+  .dot-falling::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color:  rgb(0, 0, 0, 0.7);
+    color: rgb(255, 49, 49, 0.9);
+    animation: dot-falling-before 1s infinite linear;
+    animation-delay: 0s;
+  }
+  .dot-falling::after {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color:  rgb(0, 0, 0, 0.7);
+    color: rgb(255, 49, 49, 0.9);
+    animation: dot-falling-after 1s infinite linear;
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes dot-falling {
+    0% {
+      box-shadow: 9999px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%, 50%, 75% {
+      box-shadow: 9999px 0 0 0  rgb(0, 0, 0, 0.7);
+    }
+    100% {
+      box-shadow: 9999px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  @keyframes dot-falling-before {
+    0% {
+      box-shadow: 9984px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%, 50%, 75% {
+      box-shadow: 9984px 0 0 0  rgb(0, 0, 0, 0.7);
+    }
+    100% {
+      box-shadow: 9984px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  @keyframes dot-falling-after {
+    0% {
+      box-shadow: 10014px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%, 50%, 75% {
+      box-shadow: 10014px 0 0 0  rgb(0, 0, 0, 0.7);
+    }
+    100% {
+      box-shadow: 10014px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  
+  

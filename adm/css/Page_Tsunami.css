@@ -1,0 +1,507 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+ html, body{
+    width: 100%; /* Alterado para 100% para tornar a página responsiva */
+    overflow-x: hidden;
+    max-width: 100%;
+    height: auto;
+ }
+
+
+body {
+
+    font-family: "Century Gothic", sans-serif;
+    /* flex: 1 0 auto; Adicionado ppara esticar o corpo para preencher o espaço disponível */
+    padding: 0;
+    margin: 0;
+    background-color: var(--body-color);
+    overflow-x: hidden;
+    height: auto;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(body_tsunami2.png);
+}
+.tamanho-imagem{
+    height: 100%;
+    width: 800px;
+   margin-top: 65px;
+   }
+   
+ .studio_tsunami{
+    border: 2px solid #fff;
+    margin-right: 15px;
+    object-fit: cover;
+ }
+
+ .ideal{
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: 90px;
+    position: absolute;
+
+ }
+ .botao_sobre{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 300px;
+ }
+
+
+
+
+body.dark .couteiner {
+
+    background: rgb(43, 78, 107, 0.9);
+}
+
+.descricao_tsunami {
+    position: relative;
+    font-size: 0px;
+    margin: auto;
+    max-width: 1000px;
+    font-family: century gothic;
+    text-align: center;
+    border-radius: 5px;
+    
+  }
+  
+  .couteiner {
+    background: rgb(166, 166, 166, 0.6);
+position: relative; /* Alterado para relative */
+margin: 0 auto; /* Centraliza horizontalmente */
+border-radius: 5px;
+border: 2px solid #fff;
+padding: 10px;
+width: fit-content; /* Ajusta a largura ao conteúdo */
+}   
+    
+  
+
+.descricao_tsunami_slide {
+    font-size: 0px;
+    margin-top: -30px;
+    
+}
+
+
+.p2 {
+    margin: auto;
+    max-width: 1200px;
+    color: var(--p-color);
+    font-size: 20px;
+
+
+}
+
+
+
+p {
+    margin: auto;
+    max-width: 1850px;
+    font-size: 28px;
+    color: var(--p-color);
+
+
+}
+
+
+
+.fa-marker {
+    font-size: 30px;
+}
+
+
+nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox {
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i,
+.searchToggle i {
+    /* QUANDO VC CLICAR NO BOTÃO DE DAR MODE IRÁ MUDAR A POSIÇÃO E O DARK   */
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    color: #ffffff;
+    position:absolute;
+    top: 0;
+    left: 0;
+
+    margin: 0%;
+    height: 65px;
+    width: 100%;
+    background-color: var(--nav-color);
+    /* z-index: 100; */
+    border: 2px solid #fff;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: #f7faf9;
+    font-family: century gothic;
+    font-weight: 900;
+
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ul-color);
+    text-decoration: none;
+    box-shadow: none;
+    padding: 4px;
+    width: 100%;
+    text-justify: 10px;
+    color: #ffffff;
+}
+
+.fa-instagram {
+    margin-left: 10px;
+}
+
+.fa-facebook {
+    margin-left: 10px;
+}
+
+.fa-phone-volume {
+    margin-left: 10px;
+}
+
+.links-tsunami li a {
+    position: relative;
+
+}
+
+.links-tsunami li a::before {
+    content: '';
+    margin-bottom: -13px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.links-tsunami li:hover a::before {
+    opacity: 1;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 120px;
+    font-size: 20;
+    background-color: var(--footer-color);
+    text-decoration: none;
+    color: #f7faf9;
+    font-family: century gothic;
+    font-weight: 100px;
+    border: 2px solid #fff;
+}
+
+div ul {
+    color: white;
+}
+
+div a {
+    text-decoration: none;
+    box-shadow: none;
+    color: #e4ebf5;
+}
+
+#home {
+    text-decoration: none;
+    color: #f7faf9;
+    font-family: Times New roman, sans-serif;
+    font-weight: 900;
+}
+
+#studio {
+    display: flex;
+    color: #f7faf9;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18;
+
+}
+
+.cadastro {
+    text-decoration: none;
+    color: #f7faf9;
+    text-decoration-color: #ffffff;
+    font-family: Times New roman, sans-serif;
+    font-weight: 900;
+}
+
+
+.catalogo {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    height: 100vh;
+}
+
+
+.artes {
+
+    font-size: 20px;
+    font-family: century gothic;
+    text-align: center;
+}
+
+.nome {
+    font-size: 35px;
+    font-family: century gothic;
+    text-align: center;
+
+}
+
+.flex {
+
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 1rem;
+    width: calc((75.10% / 3) - 1rem);
+    font-size: 15px;
+    margin-top: 85px;
+    height: 20%;
+
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 380px;
+    background-color: #000;
+    overflow: hidden;
+    border: 2px solid #fff;
+    
+}
+
+.card__image {
+    height: 380px;
+    width: 350px;
+    object-fit: cover;
+    scale: 1.30;
+    transition: opacity 0.25s, scale 0.35s;
+}
+
+.card:hover .card__image {
+    opacity: 0.7;
+    scale: 1;
+}
+
+.card__body {
+    position: absolute;
+    inset: 0;
+    padding: 50px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    justify-content: center;
+}
+
+.card:hover .card__body::before {
+    opacity: 1;
+    scale: 1;
+}
+
+.card__title {
+    color: #fff;
+    margin-top: 100px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card__description {
+    font-size: 25px;
+    opacity: 0;
+    translate: -25px;
+    margin-bottom: -50px;
+    color: #FFF;
+    transition: opacity 0.25s, translate 0.25s;
+}
+
+.card:hover .card__description {
+    opacity: 1;
+    translate: 0;
+}
+.image-home-tsunami3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("quasros.svg");
+  
+
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza as colunas horizontalmente */
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .flex {
+    text-align: center;
+    box-sizing: border-box;
+    margin: 1rem;
+    width: calc((100% - 6rem) / 3); /* Distribui igualmente em 3 colunas */
+    font-size: 15px;
+    margin-top: 75px;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+  }
+  .discri-quadro-tsunami-bio {
+    max-width: 700px;
+    margin-right: 0;
+    padding-right: 5px;
+    grid: 2;
+  }
+  
+  /* Estilo para o conteúdo do quadro tsunami */
+  .discri-quadro-tsunami {
+    padding-right: 5px;
+    text-align: right;
+    box-sizing: border-box;
+    color: #f7faf9;
+    max-width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 3; /* Coloque o texto na frente da imagem */
+  }

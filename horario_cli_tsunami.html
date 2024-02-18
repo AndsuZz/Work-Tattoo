@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/perfil.css">
+    <script src="js/scriptlogin.js"></script>
+    <title>Marque Horário</title>
+    <link rel="icon" type="image/png" href="src/work-tattoo/logo2.svg">
+</head>
+
+<body>
+    <main>
+        <div class="left-login">
+            <h1>Marque seu Horário<br>E aproveite a sua tatuagem</h1>
+            <img class="left-login-image" src="src/work-tattoo/logo1.png">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Marque Horário</h1>
+                <form onsubmit="return checa_form(this)" name="lista" method="POST" action="sql/cadastro-horario.php" enctype="multipart/form-data">
+               
+                    <div class="textfield">
+                        <label for="data">Data: </label>
+                        <input type="date" name="data">
+                    </div>
+                        <div class="textfield">
+                            <label for="turno">Turno</label>
+                            <select name="turno" id="turno">
+                            <option value="Manhã" nome="manha">Manhã</option>
+                            <option value="Tarde" nome="tarde">Tarde</option>
+                            <option value="Noite" nome="noite">Noite</option>kb
+                        </select>
+                        </div>
+                    
+                    <div class="textfield">
+                        <label for="file">Mande a sua ideia de tatuagem</label>
+                    <input type="file" name="imagem-tattoo" id="imagem-tattoo">
+                    </div>
+                    <input type="hidden" name="origem_formulario" value="Tsunami">
+
+                    <div class="textfield">
+                        <label for="observacao">Obs: </label>
+                        <input type="text" name="observacao" placeholder=" Digite a sua observação" id="observacao">
+                    </div>
+                    <button class="btn-login" type="submit"> Marcar Horário</button></a>
+                </form>
+              
+                <a href="Home.html"><button class="btn-home">Home</button></a>
+            </div>
+
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre a Diana</title>
+  <link rel="stylesheet" href="css/Page_Diana.css">
+  <link rel="stylesheet" href="css/respon.css">
+  <link rel="stylesheet" href="css/carrosel-diana-sobre-ela.css">
+  <link rel="stylesheet" href="js/catalogo.js">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/34b5bf92a4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/34b5bf92a4.css" crossorigin="anonymous">
+
+  <link rel="icon" type="image/png" href="src/work-tattoo/logo2.svg">
+  <script src="js/loader.js"></script>
+ <script src="js/loader_tattoo.js"></script>
+<link rel="stylesheet" href="css/loader.css">
+
+</head>
+
+<body background="src/diana/body_diana.png">
+
+  <div class="loader">
+    <div class="loader-bottom"></div>
+      <div class="loader-cup">
+        <div class="loader-liquid"></div>
+    </div>
+      
+      <div class="tattoo-machine">
+        <img src="src/loader/loader_work_tattoo.png" alt="" srcset="">
+      </div>
+      
+      <P class="p">
+        CARREGANDO <div class="col-3">
+          <div class="snippet" data-title="dot-falling">
+            <div class="stage">
+              <div class="dot-falling"></div>
+            </div>
+          </div>
+        </div>
+      </P>
+  </div>
+
+
+  <nav>
+    <ul class="links-tsunami">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Diana.html"><i class="fa-solid fa-house"></a></i></li>
+      <li>
+        <div class="darkLight-searchBox">
+          <div class="dark-light">
+            <i class='bx bx-moon moon'></i>
+            <i class='bx bx-sun sun'></i>
+          </div>
+      </li>
+
+    </ul>
+
+    <Script>
+      const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+      if (getMode && getMode === "dark-mode") {
+        body.classList.add("dark");
+      }
+
+      // js code to toggle dark and light mode
+      modeToggle.addEventListener("click", () => {
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if (!body.classList.contains("dark")) {
+          localStorage.setItem("mode", "light-mode");
+        } else {
+          localStorage.setItem("mode", "dark-mode");
+        }
+      });
+    </Script>
+  </nav>
+  <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+  <section id="studio">
+
+    <div class="artes">
+        <br>
+      <h2 class="titulo_studio">Diana</h2>
+      <br>  
+      <div class="carousel">
+        <div class="carousel-controls">
+
+
+          <div class="wrapper">
+            <img src="src/diana/diana_tatuando.png">
+            <img src="src/diana/diana_tatuando4.png">
+            <img src="src/diana/diana_tatuando6.png">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="descricao_diana_slide">
+      <div class="container">
+        <br>
+        <h2>
+          <p>Desde pequena Diana sempre foi louco por tattoos. Aos 14 anos, vivendo sozinho na Europa, resolveu
+            fazer sua primeira tattoo (uma teia de aranha no cotovelo). Aos 17 anos conseguiu uma máquina caseira
+            para tatuar (tatuando amigos e se tatuando), aí foi o
+            início de algo que não teria mais fim. Investiu em materiais de referências de estudos, foi quando
+            teve seu primeiro contato com livros de gravurista europeu antigos que daí vem a tattoo e
+            o motivo por se empenhar tanto nas tattoos que ele vem fazendo por todos esses anos. Tatua sempre
+            respeitando a pele, pensando sempre em um bom resultado duradouro por longos anos</p>
+        </h2>
+        <br>
+      </div>
+      </div>
+      <br>
+
+
+      <img src="src/diana/sobre_diana.jpg" class="foto_diana_right">
+      <div class="container-discr">
+      <div class="descricao_diana">
+
+        <h2>
+          <p>Oi, pessoal! Meu nome é Diana e sou uma tatuadora apaixonada pela arte, pelas cores vibrantes e pela
+            natureza, meu estúdio de tatuagem é um lugar onde as flores e a vegetação se encontram com a tinta e a
+            criatividade, gosto de criar um ambiente descontraído e acolhedor, para que meus clientes se sintam confortáveis e aproveitem o processo de tatuar.
+          </p>
+        </h2>
+      </div>
+      </div>
+
+      <img src="src/diana/sobre_diana2.jpg" class="foto_diana_left">
+      
+      <div class="container-discr-left">
+      <div class="descricao_diana_left">
+        <h2>
+          <p>Oi, pessoal! Meu nome é Diana e sou uma tatuadora apaixonada pela arte, pelas cores vibrantes e pela
+            natureza, meu estúdio de tatuagem é um lugar onde as flores e a vegetação se encontram com a tinta e a
+            criatividade, gosto de criar um ambiente descontraído e acolhedor, para que meus clientes se sintam confortáveis e aproveitem o processo de tatuar.
+          </p>
+        </h2>
+      </div>
+      </div>
+
+
+      
+
+      <img src="src/diana/sobre_diana3.jpg" class="foto_diana_right">
+      
+      <div class="container-discr2">
+      <div class="descricao_diana">
+     
+       
+        <h2>
+          <p>Oi, pessoal! Meu nome é Diana e sou uma tatuadora apaixonada pela arte, pelas cores vibrantes e pela
+            natureza, meu estúdio de tatuagem é um lugar onde as flores e a vegetação se encontram com a tinta e a
+            criatividade, gosto de criar um ambiente descontraído e acolhedor, para que meus clientes se sintam confortáveis e aproveitem o processo de tatuar.
+          </p>
+        </h2>
+      </div>
+      </div>
+
+      <footer>
+
+        <h1 class="titulo_studio">CONTATO</h1>
+        <ul>
+
+          <li><i class="fa-brands fa-instagram"><a href="https://www.instagram.com/"> Studio Fulano </a></i></li>
+
+          <li><i class="fa-brands fa-facebook"><a href="https://www.facebook.com/"> Studio Fulano </a></i></li>
+
+          <li><i class="fa-solid fa-phone-volume"><a> (45) 3264-4942</a></i></li>
+
+        </ul>
+      </footer>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+.carousel {
+
+    position: relative;
+    width: 100%;
+    height: 60%;
+  }
+  
+  .carousel-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+  
+  }
+  
+  .carousel img {
+    width: 100%;
+   position: relative;
+    object-fit:cover  ;
+    /* border: 4px solid #544309; */
+  }
+  
+  
+  .wrapper{
+  position: relative;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        height: auto;
+    display: flex;
+    animation: slide 8s infinite;
+  }
+  @keyframes slide{
+    100%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    55%{
+        transform: translateX(-200%);
+    }
+    75%{
+        transform: translateX(-200%);
+        
+    }
+  
+        100%{
+            transform: translateX(-200%);
+        }
+  
+        to {
+            margin-left: 0%;
+            width: 100%;
+         
+    }}

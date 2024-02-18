@@ -1,0 +1,343 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+ html, body{
+    width: 100%; /* Alterado para 100% para tornar a página responsiva */
+    overflow-x: hidden;
+    max-width: 100%;
+    height: auto;
+ }
+
+
+body {
+
+    font-family: "Century Gothic", sans-serif;
+    /* flex: 1 0 auto; Adicionado ppara esticar o corpo para preencher o espaço disponível */
+    padding: 0;
+    margin: 0;
+    background-color: var(--body-color);
+    overflow-x: hidden;
+    height: auto;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(body_tsunami2.png);
+}
+/* Estilos para telas pequenas (como celulares) */
+@media only screen and (max-width: 600px) {
+    /* Estilos para telas menores que 600px de largura */
+}
+
+/* Estilos para telas médias (como tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Estilos para telas entre 601px e 1024px de largura */
+}
+
+/* Estilos para telas grandes (como desktops) */
+@media only screen and (min-width: 1025px) {
+    /* Estilos para telas maiores que 1024px de largura */
+}
+
+.right-login {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 58px;
+}
+
+.card-login {
+    width: 60%;
+position: relative;
+    justify-content: center;
+    text-align: center;
+    background: var(--nav-color);
+    border-radius: 20px;
+
+}
+.tb{
+    padding: 10px;
+        position: relative;
+        justify-content: center;
+    align-items: center;
+    }
+    
+
+
+
+.p2 {
+    margin: auto;
+    max-width: 1200px;
+    color: var(--p-color);
+    font-size: 20px;
+
+
+}
+
+p {
+    font-weight:100;
+    margin: auto;
+    max-width: 1850px;
+    font-size: 28px;
+    color: var(--text-color);
+
+
+} nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox {
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i,
+.searchToggle i {
+    /* QUANDO VC CLICAR NO BOTÃO DE DAR MODE IRÁ MUDAR A POSIÇÃO E O DARK   */
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    color: #ffffff;
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin: 0%;
+    height: 65px;
+    width: 100%;
+    background-color: var(--nav-color);
+    /* z-index: 100; */
+    border: 2px solid #fff;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: #f7faf9;
+    font-family: century gothic;
+    font-weight: 900;
+
+}
+
+
+
+.fa-instagram {
+    margin-left: 10px;
+}
+
+.fa-facebook {
+    margin-left: 10px;
+}
+
+.fa-phone-volume {
+    margin-left: 10px;
+}
+
+.links-tsunami li a {
+    position: relative;
+
+}
+
+.links-tsunami li a::before {
+    content: '';
+    margin-bottom: -13px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.links-tsunami li:hover a::before {
+    opacity: 1;
+}
+
+footer {
+    background-color: var(--footer-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    flex-shrink: 0; /*Impede o encolhimento do footer */
+}
+
+footer h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #fff;
+}  
+
+
+div ul {
+    color: white;
+}
+
+div a {
+    text-decoration: none;
+    box-shadow: none;
+    color: #e4ebf5;
+}
+
+
+#studio {
+    display: flex;
+    color: #f7faf9;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18;
+  
+
+}
+
+
+.catalogo {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    height: 100vh;
+}
+
+
+
+.nome {
+    font-size: 35px;
+    font-family: century gothic;
+    text-align: center;
+
+}
