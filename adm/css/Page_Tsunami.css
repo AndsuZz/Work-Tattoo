@@ -505,3 +505,10 @@ div a {
     bottom: 0;
     z-index: 3; /* Coloque o texto na frente da imagem */
   }
+
+  textarea::placeholder {
+    color: #000000; /* Cor do texto do placeholder */
+ text-align: center;
+
+  }
+  

@@ -88,11 +88,11 @@
                 <br><br><br>
               
             <main>
-                <form id="form0" action='alterar-catalogo-text.php' method='post'>
-                            <label for="observacao">Titulo </label>
-                            <textarea name='observacao0' placeholder='Titulo site'></textarea>   
+                <form id="form0" action='alterar-catalogo-text.php' method='post' class="box-padrao-adm">
+                            <label for="observacao"></label>
+                            <textarea name='observacao0' placeholder='Titulo' rows='4' cols='50'></textarea>
                             <input type="hidden" name="id_horario" value="<?php echo $row['id']; ?>">
-        <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
+        <button type='submit' style='background-color: #242526; color: white; padding: 23px; position: absolute ; margin-top: 1px;' >Alterar</button>
     </form>
             
                 <form action='alterar_catalogo-imagem.php' method='post'>
@@ -168,7 +168,7 @@
                 <figcaption class="card__body">
                     <p class="card__description">
                     <form id="form7" action='alterar-catalogo-text.php' method='post'>
-                        <label for="observacao">Desenvolvimento </label>
+                        <label for="observacao"> </label>
                         <textarea name='observacao7' placeholder='Titulo site'></textarea>   
                     <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
                 </form>
@@ -186,7 +186,7 @@
                 <figcaption class="card__body">
                     <p class="card__description">
                     <form id="form8" action='alterar-catalogo-text.php' method='post'>
-                        <label for="observacao">Desenvolvimento </label>
+                        <label for="observacao"></label>
                         <textarea name='observacao8' placeholder='Titulo site'></textarea>   
                     <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
                 </form>
@@ -204,7 +204,7 @@
                 <figcaption class="card__body">
                     <p class="card__description">
                     <form id="form9" action='alterar-catalogo-text.php' method='post'>
-                        <label for="observacao">Desenvolvimento </label>
+                        <label for="observacao"></label>
                         <textarea name='observacao9' placeholder='Titulo site'></textarea>   
                     <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
                 </form>
@@ -221,7 +221,7 @@
                 <figcaption class="card__body">
                     <p class="card__description">
                     <form id="form10" action='alterar-catalogo-text.php' method='post'>
-                        <label for="observacao">Desenvolvimento </label>
+                        <label for="observacao"></label>
                         <textarea name='observacao10' placeholder='Titulo site'></textarea>   
                     <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
                 </form>
@@ -238,7 +238,7 @@
                 <figcaption class="card__body">
                     <p class="card__description">
                     <form id="form11" action='alterar-catalogo-text.php' method='post'>
-                        <label for="observacao">Desenvolvimento </label>
+                        <label for="observacao"></label>
                         <textarea name='observacao11' placeholder='Titulo site'></textarea>   
                     <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
                 </form>
@@ -255,7 +255,7 @@
                 <figcaption class="card__body">
                     <p class="card__description">
                     <form id="form12" action='alterar-catalogo-text.php' method='post'>
-                        <label for="observacao">Desenvolvimento </label>
+                        <label for="observacao"></label>
                         <textarea name='observacao12' placeholder='Titulo site'></textarea>   
                     <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
                 </form>
