@@ -19,22 +19,22 @@ if (!isset($_POST['submit']) && !empty($_POST['usuario']) && !empty($_POST['pass
         // Verificar o ID do usuário
         if ($id == 95) {
             // Redirecionar o usuário com ID 91 para uma URL diferente
-            header("Location: http://localhost/TCC%2020-10/adm/tsunami_adm.php");
+            header("Location: http://localhost/Work-tattoo/adm/tsunami_adm.php");
             exit; // Certifique-se de sair para evitar redirecionamento adicional
         } elseif ($id == 101) {
             // Redirecionar o usuário com ID 101 para outra URL específica
-            header("Location: http://localhost/TCC%2020-10/adm/servico_diana.php");
+            header("Location: http://localhost/Work-tattoo/adm/servico_diana.php");
             exit; // Certifique-se de sair para evitar redirecionamento adicional
         } else {
             // Início da sessão e armazenamento de dados em variáveis de sessão
             session_start();
             $_SESSION['usuario'] = $usuario;
             $_SESSION['password'] = $password;
-            header("Location: http://localhost/TCC%2020-10/Home-login.php"); // Redirecionar para a página desejada
+            header("Location: http://localhost/Work-tattoo/Home-login.php"); // Redirecionar para a página desejada
         }
     } else {
         echo "<script>alert('Usuário ou senha incorretos.');</script>";
-        header("Location: http://localhost/TCC%2020-10/perfil.html");
+        header("Location: http://localhost/Work-tattoo/perfil.html");
     }
 } else {
     print('Não possui nenhum usuário cadastrado');

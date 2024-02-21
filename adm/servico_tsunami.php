@@ -149,7 +149,7 @@
             $row_imagem = $result_imagem->fetch_assoc();
             $caminho_imagem = $row_imagem['caminho_tattoo'];
             // Criando um link em torno da imagem
-            echo "<a href=\"pagina_da_imagem.php?imagem=$caminho_imagem\" target=\"_blank\" alt=\"Imagem de tatuagem\">Imagem da Tattoo</a>";
+            echo "<a href=\"pagina_da_imagem.php?imagem=$caminho_imagem\" target=\"_blank\" alt=\"Imagem de tatuagem\">Imagem do serviço</a>";
         } else {
             echo "Nenhuma imagem encontrada para o ID fornecido.";
         }

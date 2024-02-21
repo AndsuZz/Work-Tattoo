@@ -9,6 +9,6 @@ session_unset();
 session_destroy();
 
 // Redirecione para a página de login ou qualquer outra página de sua escolha
-header("Location: http://localhost/TCC%2020-10/Home.html");
+header("Location: http://localhost/Work-tattoo/Home.html");
 exit();
 ?>

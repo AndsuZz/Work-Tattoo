@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
 } else {
     // Se o usuário não estiver logado, você pode exibir uma mensagem diferente ou redirecioná-los para a página de login.
     echo "Você não está logado. Por favor, faça o login primeiro.";
-  header("Location: http://localhost/TCC%2020-10/login.html"); 
+  header("Location: http://localhost/Work-tattoo/login.html"); 
 }
 ?>
             <div class="darkLight-searchBox">
