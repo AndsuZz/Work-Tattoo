@@ -6,7 +6,7 @@
       },
       {
         "source": "/(.+\\.php)$",
-        "destination": "http://localhost/tsunami.php"
+        "destination": "http://127.0.0.1/tsunami.php"
       }
     ]
   }
