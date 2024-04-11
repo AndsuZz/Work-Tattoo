@@ -3,6 +3,10 @@
       {
         "source": "/(.*)",
         "destination": "/home.html"
+      },
+      {
+        "source": "/(.+\\.php)$",
+        "destination": "http://localhost/tsunami.php"
       }
     ]
   }
