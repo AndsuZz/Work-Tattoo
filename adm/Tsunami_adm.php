@@ -88,12 +88,7 @@
                 <br><br><br>
               
             <main>
-                <form id="form0" action='alterar-catalogo-text.php' method='post' class="box-padrao-adm">
-                            <label for="observacao"></label>
-                            <textarea name='observacao0' placeholder='Titulo' rows='4' cols='50'></textarea>
-                            <input type="hidden" name="id_horario" value="<?php echo $row['id']; ?>">
-        <button type='submit' style='background-color: #242526; color: white; padding: 23px; position: absolute ; margin-top: 1px;' >Alterar</button>
-    </form>
+             
             
                 <form action='alterar_catalogo-imagem.php' method='post'>
                         <input type="file" name="imagem-tattoo" id="imagem-tattoo">
