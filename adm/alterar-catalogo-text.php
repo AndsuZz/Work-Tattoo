@@ -1,5 +1,4 @@
 <?php
-// Se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Conectar ao banco de dados
     $dbHost = "localhost";
@@ -42,12 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Executar a consulta de atualização
         if (!empty($updates)) {
             if ($conn->query($updateQuery) === TRUE) {
-                echo "Dados atualizados com sucesso.";
+                $_SESSION['message'] = "Dados atualizados com sucesso.";
+                $_SESSION['message_type'] = "success";
             } else {
-                echo "Error: " . $updateQuery . "<br>" . $conn->error;
+                $_SESSION['message'] = "Erro: " . $updateQuery . "<br>" . $conn->error;
+                $_SESSION['message_type'] = "error";
             }
         } else {
-            echo "Nenhum dado para atualizar.";
+            $_SESSION['message'] = "Nenhum dado para atualizar.";
+            $_SESSION['message_type'] = "info";
         }
     } else {
         // Se não existem dados para atualizar, realizar uma inserção
@@ -57,12 +59,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('" . $conn->real_escape_string($insertObservacao) . "', '" . implode("', '", array_map(array($conn, 'real_escape_string'), $observacoes)) . "')";
 
         if ($conn->query($insertQuery) === TRUE) {
-            echo "Novo registro criado com sucesso.";
+            $_SESSION['message'] = "Novo registro criado com sucesso.";
+            $_SESSION['message_type'] = "success";
         } else {
-            echo "Error: " . $insertQuery . "<br>" . $conn->error;
+            $_SESSION['message'] = "Erro: " . $insertQuery . "<br>" . $conn->error;
+            $_SESSION['message_type'] = "error";
         }
     }
 
     $conn->close();
+
+    // Redirecionar de volta para a página original
+    header('Location:Tsunami_adm.php'); // Altere para o caminho correto da sua página de formulário
+    exit();
 }
-?>
+

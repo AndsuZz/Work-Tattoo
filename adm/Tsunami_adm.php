@@ -15,8 +15,45 @@
     <script src="js/loader.js"></script>
     <script src="js/loader_tattoo.js"></script>
     <link rel="stylesheet" href="css/loader-tsunami.css">
-</head>
 
+
+
+<style>   .message-box {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: white;
+    animation: slideInRight 1s forwards, fadeOut 6s 2s forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        right: -200px; /* Inicia fora da tela à direita */
+    }
+    to {
+        right: 20px; /* Termina na posição original */
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.message-box.success { background-color: hsl(120, 100%, 25%); }
+.message-box.error { background-color: #ff0000; }
+.message-box.info { background-color: #0000ff; }
+
+  </style>
+
+</head>
 <body  background="src/Tsunami/body_tsunami2.png">
 
     <div class="loader">
@@ -89,9 +126,45 @@
               
             <main>
              
+            <?php
+session_start();
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+$message_type = isset($_SESSION['message_type']) ? $_SESSION['message_type'] : '';
+unset($_SESSION['message']);
+unset($_SESSION['message_type']);
+?>
+
+            
+<?php if ($message): ?>
+    <div id="message-box" class="message-box <?php echo $message_type; ?>">
+        <?php echo $message; ?>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var messageBox = document.getElementById('message-box');
+            if (messageBox) {
+                messageBox.style.display = 'block';
+                setTimeout(function() {
+                    messageBox.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+    <?php endif; ?>
+
+
+    
+            <form id="form0" action='alterar-catalogo-text.php' method='post'>
+    <textarea name='observacao0' placeholder='Titulo site' style='width: 100%; height: 150px; border-radius: 8px; border: 1px solid #ccc; padding: 10px; font-size: 16px;'></textarea>
+    <input type="hidden" name="id_horario" value="<?php echo $row['id']; ?>">
+    <button type='submit' style='background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;'>Alterar</button>
+</form>
+
+<br>
+<br>
             
                 <form action='alterar_catalogo-imagem.php' method='post'>
-                        <input type="file" name="imagem-tattoo" id="imagem-tattoo">
+                        <input  style='background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;' type="file" name="imagem-studio" id="imagem-studio">
                 </form>
                       
                 <br>
