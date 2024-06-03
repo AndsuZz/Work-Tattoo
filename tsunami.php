@@ -141,7 +141,20 @@
 
             </section>
             <h2>
-            <img src="src/Tsunami/studio-tsunami.svg" class="image-home-tsunami">
+            <?php
+
+    if (isset($_GET['imagem'])) {
+        $caminho_imagem = $_GET['imagem'];
+        echo "<img src='" . $caminho_imagem . "' class='tamanho-imagem' alt='Imagem de tatuagem'>";
+    } else {
+        echo "Nenhuma imagem encontrada.";
+    }
+?>
+
+
+        
+           
+
             <i class="fa-solid fa-location-dot"><a href="localização.html" id="localtsu" class="discri-imagem-home">
                 Localização Studio
                 </a></i>

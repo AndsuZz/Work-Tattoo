@@ -55,7 +55,7 @@
 
 </head>
 <body  background="src/Tsunami/body_tsunami2.png">
-
+<!-- 
     <div class="loader">
         <div class="loader-bottom"></div>
         <div class="loader-cup">
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </P>
-    </div>
+    </div> -->
 
     <nav>
         <ul class="links-tsunami">
@@ -162,10 +162,19 @@ unset($_SESSION['message_type']);
 
 <br>
 <br>
-            
-                <form action='alterar_catalogo-imagem.php' method='post'>
-                        <input  style='background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;' type="file" name="imagem-studio" id="imagem-studio">
-                </form>
+<form action='alterar-catalogo-imagem.php' method='post' enctype='multipart/form-data'>
+        <input style='background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;' type="file" name="imagem-studio" id="imagem-studio">
+        <?php
+if (isset($_GET['imagem'])) {
+    $caminho_imagem = $_GET['imagem'];
+    echo "<img src='" . htmlspecialchars($caminho_imagem) . "' class='tamanho-imagem' alt='Imagem de tatuagem'>";
+} else {
+    echo "Nenhuma imagem encontrada.";
+}
+?>
+        <button type='submit' style='background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;'>Alterar</button>
+    </form>
+
                       
                 <br>
                 <i class="fa-solid fa-location-dot"><a href="localização.html" id="localtsu"> Localização Studio</a></i> 
@@ -179,8 +188,6 @@ unset($_SESSION['message_type']);
                         <textarea name='observacao1' placeholder='Titulo site'></textarea>   
                     <button type='submit' style='background-color: #242526; color: white; padding: 5px;'>Alterar</button>
                 </form>
-
-                        <h2><p id="editable-paragraph2">Sobre o nosso studio</p></h2> 
                     </div>
                 </div>
             </main>

@@ -23,7 +23,7 @@
 
 <body>
     <!-- background="src/Tsunami/body_tsunami2.png" -->
-
+<!-- 
     <div class="loader">
         <div class="loader-bottom"></div>
         <div class="loader-cup">
@@ -44,7 +44,7 @@
             </div>
         </div>
         </P>
-    </div>
+    </div> -->
 
 
 

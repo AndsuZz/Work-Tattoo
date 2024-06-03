@@ -45,19 +45,19 @@ body.dark {
     
   }
   
-      /* Estilos para o scroll do Chrome e Safari */
+/*     
       ::-webkit-scrollbar {
-        width: 12px; /* Largura do scroll vertical */
+        width: 12px; 
         background-color: rgba(0, 0, 0, 0);
     }
 
     ::-webkit-scrollbar-track {
-        background-color: transparent; /* Fundo do track */
+        background-color: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color:var(--scrolll-color); /* Cor do thumb (barra de rolagem) */
-        border-radius: 6px; /* Raio de borda do thumb */
+        background-color:var(--scrolll-color);
+        border-radius: 6px; 
     }
 
 
@@ -65,7 +65,6 @@ body.dark {
   body {
   
 font-family: 'Century gothic';
-    /* flex: 1 0 auto; Adicionado para esticar o corpo para preencher o espaço disponível */
     padding: 0;
     margin: 0;
     background-color: var(--body-color);
@@ -130,17 +129,7 @@ font-family: 'Century gothic';
     opacity: 0;
     visibility: hidden;
   }
-  
-  /* .loader::after{
-    content: "";
-    width: 75px;
-    height: 75px;
-    border: 15px solid #fff;
-    border-top-color: #FF3131;
-    border-radius: 50%;
-    animation: loading 4s ease infinite;
-  } */
-  
+
   
   @keyframes liquidAnimation {
     0% {
@@ -247,5 +236,5 @@ font-family: 'Century gothic';
     }
   }
   
-    
+     */
   
