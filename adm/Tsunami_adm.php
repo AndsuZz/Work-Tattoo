@@ -11,7 +11,6 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/34b5bf92a4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://kit.fontawesome.com/34b5bf92a4.css" crossorigin="anonymous">
-
     <script src="js/loader.js"></script>
     <script src="js/loader_tattoo.js"></script>
     <link rel="stylesheet" href="css/loader-tsunami.css">
@@ -162,72 +161,40 @@ unset($_SESSION['message_type']);
 
 <br>
 <br>
-<form action='alterar-catalogo-imagem.php' method='post' enctype='multipart/form-data'>
-        <input style='background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;' type="file" name="imagem-studio" id="imagem-studio">
-        <?php
+<script>
+        // Função para pré-visualizar a imagem selecionada
+        function previewImagem() {
+            const input = document.getElementById('imagem-studio');
+            const preview = document.getElementById('imagem-preview');
 
-if (isset($_GET['imagem'])) {
-    $caminho_imagem = $_GET['imagem'];
-    echo "<img src='" . htmlspecialchars($caminho_imagem) . "' class='tamanho-imagem' alt='Imagem de tatuagem'>";
-} else {
-    echo "Nenhuma imagem encontrada.";
-}
+            // Verificar se um arquivo foi selecionado
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
 
-$target_dir = "../adm/src/fotos estudio geral/pablo/"; // Corrigido com ponto e vírgula
+                reader.onload = function(e) {
+                    // Definir o src da imagem de pré-visualização
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Exibir a imagem
+                }
 
-// Verifica se o arquivo foi enviado corretamente
-if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] == 0) {
-    
-    // Caminho completo do arquivo de destino
-    $target_file = $target_dir . basename($_FILES["imagem"]["name"]);
-
-    // Obtém a extensão do arquivo
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    // Verifica se o formato do arquivo é permitido
-    if (in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])) {
-        
-        // Tenta mover o arquivo para o diretório de destino
-        if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $target_file)) {
-            
-            // Caminho da imagem que será salvo no banco de dados
-            $caminho_imagem = $target_file;
-
-            // Verifica se há um nome de usuário na sessão
-            if (isset($_SESSION['usuario'])) {
-                // Pegar o nome de usuário da sessão
-                $usuario = $_SESSION['usuario'];
-
-                // Atualizar o caminho da imagem para a URL correspondente
-                $caminho_imagem = "" . $target_file;
-
-                // Fazer algo com o nome de usuário, como inserir na tabela
-                $sql = "INSERT INTO tb_imagens_studio_tsunami (imagem, caminho_imagem)
-                        VALUES ('$target_file', '$caminho_imagem')";
-
-                // Execute a query (usando o PDO ou mysqli para a execução da query)
-                // Por exemplo, usando mysqli:
-                // $conn->query($sql);
-
-                echo "Arquivo enviado com sucesso.";
+                reader.readAsDataURL(input.files[0]); // Ler o arquivo como URL
             } else {
-                echo "Usuário não autenticado.";
+                preview.src = ''; // Limpar pré-visualização se nenhum arquivo foi selecionado
+                preview.style.display = 'none'; // Esconder a imagem
             }
-        } else {
-            echo "Desculpe, houve um erro ao enviar o arquivo.";
         }
-    } else {
-        echo "Desculpe, apenas arquivos JPG, JPEG, PNG e GIF são permitidos.";
-    }
-} else {
-    echo "Nenhum arquivo enviado ou ocorreu um erro no envio.";
-}
-?>
+    </script>
 
-<form method="post" enctype="multipart/form-data">
-    <input type="file" name="imagem" required>
-    <button type='submit' style='background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;'>Alterar</button>
-</form>
+<form action="alterar-catalogo-imagem.php" method="post" enctype="multipart/form-data">
+        <input 
+            style="background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;" 
+            type="file" 
+            name="imagem-studio" 
+            id="imagem-studio" 
+            required
+        />
+        <button type="submit" style="background-color: #242526; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;">Alterar</button>
+    </form>
 
 
                       

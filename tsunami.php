@@ -18,6 +18,23 @@
     <script src="js/loader.js"></script>
     <script src="js/loader_tattoo.js"></script>
     <link rel="stylesheet" href="css/loader-tsunami.css">
+
+    <style>
+        /* Estilo para a galeria de imagens */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .galeria img {
+            max-width: 300px;
+            max-height: 300px;
+            border: 2px solid #242526;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -141,83 +158,52 @@
 
             </section>
             <h2>
-            <?php
 
+            <h1 style="text-align: center;">Galeria de Imagens Cadastradas</h1>
+    <div class="galeria">
+        <?php
+        // Dados de conexão com o banco de dados
+        $dbHost = "localhost";
+        $dbName = "work-tattoo";
+        $dbUsername = "root";
+        $dbPassword = "";
 
-// Configurações de conexão com o banco de dados
-$dbHost = "localhost";     // Host do banco de dados
-$dbName = "work-tattoo";   // Nome do banco de dados
-$dbUsername = "root";      // Nome de usuário do banco de dados
-$dbPassword = "";          // Senha do banco de dados
+        // Criar conexão
+        $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-// Cria a conexão com o banco de dados
-$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+        // Verificar conexão
+        if ($conn->connect_error) {
+            die("Conexão falhou: " . $conn->connect_error);
+        }
 
-// Verifica se há algum erro na conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+        // Consulta para selecionar as imagens
+        $sql = "SELECT imagem, caminho_imagem FROM tb_imagens_studio_tsunami";
+        $result = $conn->query($sql);
 
-// Debug: Exiba a URL atual (apenas para fins de depuração; remova em produção)
-// echo "URL: " . $_SERVER['REQUEST_URI'] . "<br>";
+        // Verificar se há resultados
+        if ($result->num_rows > 0) {
+            // Iterar sobre os resultados e exibir cada imagem
+            while ($row = $result->fetch_assoc()) {
+                $imagem = htmlspecialchars($row['imagem']);
+                $caminhoImagem = htmlspecialchars($row['caminho_imagem']);
 
-// Verifica se o parâmetro 'imagem_id' está presente na URL
-// Configurações de conexão com o banco de dados
-$dbHost = "localhost";     // Host do banco de dados
-$dbName = "work-tattoo";   // Nome do banco de dados
-$dbUsername = "root";      // Nome de usuário do banco de dados
-$dbPassword = "";          // Senha do banco de dados
+                // Verificar se o caminho da imagem é acessível
+                if (file_exists($caminhoImagem)) {
+                    echo "<div>
+                            <img src=\"$caminhoImagem\" alt=\"Imagem cadastrada\">
+                          </div>";
+                } else {
+                    echo "<p>Imagem não encontrada no caminho: $caminhoImagem</p>";
+                }
+            }
+        } else {
+            echo "<p style='text-align: center;'>Nenhuma imagem cadastrada no momento.</p>";
+        }
 
-// Cria a conexão com o banco de dados
-$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-// Verifica se há algum erro na conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
-
-// Verifica se o parâmetro 'imagem_id' está presente na URL
-if (isset($_GET['imagem_id'])) {
-    $imagem_id = (int) $_GET['imagem_id']; // Convertendo para int para segurança
-
-    // Consulta SQL para obter o caminho da imagem
-    $sql = "SELECT caminho_imagem FROM tb_imagens_studio_tsunami WHERE id = ?";
-
-    // Prepara a declaração para evitar injeções de SQL
-    $stmt = $conn->prepare($sql);
-    if (!$stmt) {
-        die("Erro na preparação da declaração: " . $conn->error);
-    }
-
-    $stmt->bind_param("i", $imagem_id); // "i" indica que é um inteiro
-    $stmt->execute();
-
-    // Obtém o resultado da consulta
-    $resultado = $stmt->get_result();
-
-    // Verifica se a imagem foi encontrada
-    if ($resultado->num_rows > 0) {
-        // Recupera o caminho da imagem
-        $linha = $resultado->fetch_assoc();
-        $caminho_imagem = $linha['caminho_imagem'];
-
-        // Exibe a imagem
-        echo "<img src='" . htmlspecialchars($caminho_imagem) . "' class='tamanho-imagem' alt='Imagem de tatuagem'>";
-    } else {
-        echo "Imagem não encontrada no banco de dados.";
-    }
-
-    // Libera o resultado e fecha a declaração
-    $resultado->free();
-    $stmt->close();
-} else {
-    echo "ID da imagem não especificado ou inválido na URL.";
-}
-
-
-// Fecha a conexão com o banco de dados
-$conn->close();
-?>
+        // Fechar conexão
+        $conn->close();
+        ?>
+    </div>
 
 
 
