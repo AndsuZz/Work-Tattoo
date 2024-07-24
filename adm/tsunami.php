@@ -22,6 +22,10 @@
 
 <body>
     <!-- background="src/Tsunami/body_tsunami2.png" -->
+  <h1>
+    teste
+  </h1>
+
 
     <div class="loader">
         <div class="loader-bottom"></div>
@@ -148,7 +152,40 @@
 
             </section>
             <h2>
-            <img src="src/Tsunami/studio-tsunami.svg" class="image-home-tsunami">
+       <?php
+    include("sql/conexao.php");
+
+    // Consulta para pegar a última imagem cadastrada
+    $sql = "SELECT caminho_imagem FROM tb_imagens_studio_tsunami ORDER BY id DESC LIMIT 1";
+    $result = $conexao->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $caminho_imagem = $row['caminho_imagem'];
+
+        // Exibir caminho armazenado no banco de dados para depuração
+        echo "<p>Caminho armazenado no banco de dados: $caminho_imagem</p>";
+
+        // Construir o caminho absoluto da imagem
+        $caminho_imagem_completo = realpath(__DIR__ . "/../adm/imagem-estudio-tsunami/" . $caminho_imagem);
+
+        // Verificar e exibir o caminho absoluto para depuração
+        echo "<p>Caminho absoluto da imagem: $caminho_imagem_completo</p>";
+
+        // Verificar se o arquivo realmente existe
+        if (file_exists($caminho_imagem_completo)) {
+            // Exibir a imagem com a classe desejada
+            echo "<img src='adm/imagem-estudio-tsunami/" . urlencode(basename($caminho_imagem)) . "' class='image-home-tsunami' alt='Imagem do Studio Tsunami'>";
+        } else {
+            echo "Arquivo de imagem não encontrado no caminho: $caminho_imagem_completo";
+        }
+    } else {
+        echo "Nenhuma imagem encontrada no banco de dados.";
+    }
+
+    $conexao->close();
+    ?>
+
             <i class="fa-solid fa-location-dot"><a href="localização.html" id="localtsu" class="discri-imagem-home">
                 Localização Studio
                 </a></i>

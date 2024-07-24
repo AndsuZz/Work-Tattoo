@@ -19,22 +19,7 @@
     <script src="js/loader_tattoo.js"></script>
     <link rel="stylesheet" href="css/loader-tsunami.css">
 
-    <style>
-        /* Estilo para a galeria de imagens */
-        .galeria {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .galeria img {
-            max-width: 300px;
-            max-height: 300px;
-            border: 2px solid #242526;
-            border-radius: 8px;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -158,59 +143,50 @@
 
             </section>
             <h2>
+            <?php
+include("sql/conexao.php");
 
-            <h1 style="text-align: center;">Galeria de Imagens Cadastradas</h1>
-    <div class="galeria">
-        <?php
-        // Dados de conexão com o banco de dados
-        $dbHost = "localhost";
-        $dbName = "work-tattoo";
-        $dbUsername = "root";
-        $dbPassword = "";
+// Verifique se a conexão foi bem-sucedida
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
+}
 
-        // Criar conexão
-        $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+// Consulta para obter o ID da imagem (presumindo que a consulta já foi feita anteriormente)
+$sql = "SELECT id FROM tb_imagens_studio_tsunami ORDER BY id DESC LIMIT 1";
+$result = $conexao->query($sql);
 
-        // Verificar conexão
-        if ($conn->connect_error) {
-            die("Conexão falhou: " . $conn->connect_error);
-        }
-
-        // Consulta para selecionar as imagens
-        $sql = "SELECT imagem, caminho_imagem FROM tb_imagens_studio_tsunami";
-        $result = $conn->query($sql);
-
-        // Verificar se há resultados
-        if ($result->num_rows > 0) {
-            // Iterar sobre os resultados e exibir cada imagem
-            while ($row = $result->fetch_assoc()) {
-                $imagem = htmlspecialchars($row['imagem']);
-                $caminhoImagem = htmlspecialchars($row['caminho_imagem']);
-
-                // Verificar se o caminho da imagem é acessível
-                if (file_exists($caminhoImagem)) {
-                    echo "<div>
-                            <img src=\"$caminhoImagem\" alt=\"Imagem cadastrada\">
-                          </div>";
-                } else {
-                    echo "<p>Imagem não encontrada no caminho: $caminhoImagem</p>";
-                }
-            }
-        } else {
-            echo "<p style='text-align: center;'>Nenhuma imagem cadastrada no momento.</p>";
-        }
-
-        // Fechar conexão
-        $conn->close();
-        ?>
-    </div>
-
-
-
-
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $id_imagem = $row["id"]; // Obtém o ID da imagem do resultado da consulta
+    
+    // Consulta SQL para obter o caminho da imagem a partir do ID
+    $sql_imagem = "SELECT caminho_imagem FROM tb_imagens_studio_tsunami WHERE id = $id_imagem";
+    $result_imagem = $conexao->query($sql_imagem);
+    
+    if ($result_imagem->num_rows > 0) {
+        // Exibir a imagem como um link para abri-la em outra página
+        $row_imagem = $result_imagem->fetch_assoc();    
+        $caminho_imagem = $row_imagem['caminho_imagem'];
         
-           
+        // Construir a URL da imagem com base no caminho
+        $url_imagem = "http://localhost/Work-Tattoo/adm/imagem-estudio-tsunami/" . $caminho_imagem;
+        
+        // Criar um link para a imagem
+        echo "<a href=\"paginateste.php?imagem=$url_imagem\" target=\"_blank\" alt=\"Imagem de tatuagem\">Imagem da Tattoo</a>";
+    } else {
+        echo "Nenhuma imagem encontrada para o ID fornecido.";
+    }
+} else {
+    echo "Nenhuma imagem encontrada.";
+}
 
+$conexao->close();
+?>
+
+
+
+
+<br>
             <i class="fa-solid fa-location-dot"><a href="localização.html" id="localtsu" class="discri-imagem-home">
                 Localização Studio
                 </a></i>

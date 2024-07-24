@@ -20,6 +20,10 @@ if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
         $row = $result->fetch_assoc();
         $id = $row['id'];
 
+        // Início da sessão e armazenamento de dados em variáveis de sessão
+        $_SESSION['usuario'] = $usuario;
+        $_SESSION['password'] = $password;
+
         // Verificar o ID do usuário
         if ($id == 95) {
             // Redirecionar o usuário com ID 95 para uma URL diferente
@@ -30,23 +34,24 @@ if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
             header("Location: http://localhost/Work-tattoo/adm/servico_diana.php");
             exit; // Certifique-se de sair para evitar redirecionamento adicional
         } else {
-            // Início da sessão e armazenamento de dados em variáveis de sessão
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['password'] = $password;
-            header("Location: http://localhost/Work-tattoo/Home-login.php"); // Redirecionar para a página desejada
+            // Redirecionar para a página desejada
+            header("Location: http://localhost/Work-tattoo/Home-login.php");
             exit; // Saia do script após o redirecionamento
         }
     } else {
         // Se o usuário não foi encontrado
         echo "<script>alert('Usuário ou senha incorretos.');</script>";
-        header("Location: http://localhost/Work-tattoo/perfil.html");
+        echo "<script>window.location.href = 'http://localhost/Work-tattoo/perfil.html';</script>";
         exit; // Saia do script após o redirecionamento
     }
 } else {
     // Se o formulário não foi enviado corretamente
-    print('Não possui nenhum usuário cadastrado ou campos estão vazios.');
+    echo "<script>alert('Não possui nenhum usuário cadastrado ou campos estão vazios.');</script>";
+    echo "<script>window.location.href = 'http://localhost/Work-tattoo/perfil.html';</script>";
+    exit;
 }
 
+// Exibir erros para fins de depuração
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
