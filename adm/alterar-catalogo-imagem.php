@@ -12,7 +12,6 @@ if (!isset($_SESSION['usuario'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Verificar se o arquivo foi enviado corretamente
     if (isset($_FILES['imagem-studio']) && $_FILES['imagem-studio']['error'] == 0) {
-        // Obter os dados do formulário, se existirem
         // Diretório de destino para salvar as imagens
         $target_dir = "../adm/imagem-estudio-tsunami/";
 
@@ -36,24 +35,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Pegar o nome de usuário da sessão
                     $usuario = $_SESSION['usuario'];
 
-                    // Fazer algo com o nome de usuário, como inserir na tabela
-                    $sql = "INSERT INTO tb_imagens_studio_tsunami (usuario, caminho_imagem, imagem) VALUES (?, ?, ?)";
+                    // Preparar a declaração SQL correta
+                    $sql = "INSERT INTO tb_imagens_studio_tsunami (caminho_imagem, imagem) VALUES (?, ?)";
 
                     // Preparar e executar a declaração SQL
                     $stmt = $conexao->prepare($sql);
-                    $null = NULL; // Placeholder para o BLOB
-                    $stmt->bind_param("ssb", $usuario, $caminho_tattoo, $null);
 
                     // Abrir o arquivo como um BLOB para ser enviado ao banco de dados
                     $fp = fopen($target_file, "rb");
-                    $stmt->send_long_data(2, fread($fp, filesize($target_file)));
+                    $imagem_blob = fread($fp, filesize($target_file));
                     fclose($fp);
+
+                    // Bind de parâmetros
+                    $stmt->bind_param("sb", $caminho_tattoo, $imagem_blob);
 
                     if ($stmt->execute()) {
                         echo "<script>alert('Imagem cadastrada com sucesso!');</script>";
                         echo "<script>window.location.href = 'Tsunami_adm.php';</script>";
                     } else {
-                        echo "Erro ao cadastrar imagem: " . $conexao->error;
+                        echo "Erro ao cadastrar imagem: " . $stmt->error;
                     }
 
                     $stmt->close();

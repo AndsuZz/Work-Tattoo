@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tsunami</title>
-    <link rel="stylesheet" href="css/Page_Tsunami.css">
+    <link rel="stylesheet" href="css/page_tsunami.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/34b5bf92a4.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=FontName" rel="stylesheet">
@@ -142,49 +142,61 @@
 ?>
 
             </section>
-            <h2>
+         
             <?php
-include("sql/conexao.php");
+// conexao.php
+$dbHost = "localhost";
+$dbName = "work-tattoo";
+$dbUsername = "root";
+$dbPassword = "";
 
-// Verifique se a conexão foi bem-sucedida
-if ($conexao->connect_error) {
-    die("Falha na conexão: " . $conexao->connect_error);
+// Criando conexão
+$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+// Verificando conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
 }
-
-// Consulta para obter o ID da imagem (presumindo que a consulta já foi feita anteriormente)
-$sql = "SELECT id FROM tb_imagens_studio_tsunami ORDER BY id DESC LIMIT 1";
-$result = $conexao->query($sql);
+// Consultar o último registro na tabela
+$sql = "SELECT caminho_imagem FROM tb_imagens_studio_tsunami ORDER BY id DESC LIMIT 1";
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
+    // Se houver resultados, buscar o caminho da imagem
     $row = $result->fetch_assoc();
-    $id_imagem = $row["id"]; // Obtém o ID da imagem do resultado da consulta
-    
-    // Consulta SQL para obter o caminho da imagem a partir do ID
-    $sql_imagem = "SELECT caminho_imagem FROM tb_imagens_studio_tsunami WHERE id = $id_imagem";
-    $result_imagem = $conexao->query($sql_imagem);
-    
-    if ($result_imagem->num_rows > 0) {
-        // Exibir a imagem como um link para abri-la em outra página
-        $row_imagem = $result_imagem->fetch_assoc();    
-        $caminho_imagem = $row_imagem['caminho_imagem'];
-        
-        // Construir a URL da imagem com base no caminho
-        $url_imagem = "http://localhost/Work-Tattoo/adm/imagem-estudio-tsunami/" . $caminho_imagem;
-        
-        // Criar um link para a imagem
-        echo "<a href=\"paginateste.php?imagem=$url_imagem\" target=\"_blank\" alt=\"Imagem de tatuagem\">Imagem da Tattoo</a>";
+    $caminho_imagem = $row['caminho_imagem'];
+
+    // Exibir o caminho para debug
+    echo "<p>Caminho da imagem: " . htmlspecialchars($caminho_imagem) . "</p>";
+
+    // Verificar se o caminho é relativo ou absoluto
+    if (!file_exists($caminho_imagem)) {
+        // Se o caminho não existir, tente corrigir se for relativo
+        $caminho_imagem = __DIR__ . '/' . $caminho_imagem;
+    }
+
+    // Verificar se o caminho é acessível e se a imagem existe
+    if (file_exists($caminho_imagem)) {
+        // Exibir a imagem
+        echo "<h2>Última Imagem Cadastrada:</h2>";
+        echo "<img src='" . htmlspecialchars($caminho_imagem) . "' alt='Última Imagem Cadastrada' style='max-width: 100%; height: auto;'/>";
     } else {
-        echo "Nenhuma imagem encontrada para o ID fornecido.";
+        echo "<p>O arquivo de imagem não foi encontrado ou o caminho está incorreto.</p>";
+        echo "<p>Caminho verificado: " . htmlspecialchars($caminho_imagem) . "</p>";
     }
 } else {
     echo "Nenhuma imagem encontrada.";
 }
 
-$conexao->close();
+// Fechar a conexão
+$conn->close();
 ?>
 
 
 
+
+
+<h2>
 
 <br>
             <i class="fa-solid fa-location-dot"><a href="localização.html" id="localtsu" class="discri-imagem-home">
