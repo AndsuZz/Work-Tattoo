@@ -51,7 +51,8 @@
 
     <nav>
         <ul class="links-tsunami">
-            <li><a href="Home.html">Home</a></li>
+        <li><a href="C:/xampp/htdocs/Work-Tattoo/home.html">Home</a></li>
+
             <li id="artista"><a href="catalogo_tsunami.html">Sobre o tatuador</a></li>
             <li>
                 <div class="darkLight-searchBox">
@@ -166,8 +167,6 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $caminho_imagem = $row['caminho_imagem'];
 
-    // Exibir o caminho para debug
-    echo "<p>Caminho da imagem: " . htmlspecialchars($caminho_imagem) . "</p>";
 
     // Verificar se o caminho é relativo ou absoluto
     if (!file_exists($caminho_imagem)) {
@@ -178,7 +177,7 @@ if ($result->num_rows > 0) {
     // Verificar se o caminho é acessível e se a imagem existe
     if (file_exists($caminho_imagem)) {
         // Exibir a imagem
-        echo "<h2>Última Imagem Cadastrada:</h2>";
+
         echo "<img src='" . htmlspecialchars($caminho_imagem) . "' alt='Última Imagem Cadastrada' style='max-width: 100%; height: auto;'/>";
     } else {
         echo "<p>O arquivo de imagem não foi encontrado ou o caminho está incorreto.</p>";

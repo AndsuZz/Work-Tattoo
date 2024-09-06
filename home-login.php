@@ -99,7 +99,7 @@ if (isset($_SESSION['usuario'])) {
     <div class="flex-container">
         <div class="flex">
           <figure class="card">
-            <a href="tsunami-login.html">
+            <a href="Tsunami/tsunami-login.html">
               <img src="src/Tsunami/Tsunami-tatuador.jpg"  class="card__image" />
               <figcaption class="card__body">
                 <h2 class="card__title">TSUNAMI</h2>
