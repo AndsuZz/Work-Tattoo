@@ -51,7 +51,7 @@
 
     <nav>
         <ul class="links-tsunami">
-        <li><a href="C:/xampp/htdocs/Work-Tattoo/home.html">Home</a></li>
+        <li><a href="./home.html">Home</a></li>
 
             <li id="artista"><a href="catalogo_tsunami.html">Sobre o tatuador</a></li>
             <li>
@@ -423,7 +423,7 @@ $conn->close();
     <div class="flex-container">
         <div class="flex">
             <figure class="card">
-                <img src="src/tattoo/tattoo_tsunami/img1.jpg" width="450px" height="400px"
+                <img src="../src/tattoo/tattoo_tsunami/img1.jpg" width="450px" height="400px"
                     class="card__image" />
                 <figcaption class="card__body">
                     
@@ -457,7 +457,7 @@ $conn->close();
 
         <div class="flex">
             <figure class="card">
-                <img src="src/tattoo/tattoo_tsunami/img2.jpg" width="450px" height="400px"
+                <img src="../src/tattoo/tattoo_tsunami/img2.jpg" width="450px" height="400px"
                     class="card__image" />
                 <figcaption class="card__body">
                 <?php
@@ -489,7 +489,7 @@ $conn->close();
 
         <div class="flex">
             <figure class="card">
-                <img src="src/tattoo/tattoo_tsunami/img3.jpg" width="450px" height="400px"
+                <img src="../src/tattoo/tattoo_tsunami/img3.jpg" width="450px" height="400px"
                     class="card__image" />
                 <figcaption class="card__body">
                 
@@ -521,7 +521,7 @@ $conn->close();
         </div>
         <div class="flex">
             <figure class="card">
-                <img src="src/tattoo/tattoo_tsunami/img4.jpg" width="450px" height="400px"
+                <img src="../src/tattoo/tattoo_tsunami/img4.jpg" width="450px" height="400px"
                     class="card__image" />
                 <figcaption class="card__body">
                 <?php
@@ -551,7 +551,7 @@ $conn->close();
         </div>
         <div class="flex">
             <figure class="card">
-                <img src="src/tattoo/tattoo_tsunami/img5.jpg" width="450px" height="400px"
+                <img src="../src/tattoo/tattoo_tsunami/img5.jpg" width="450px" height="400px"
                     class="card__image" />
                 <figcaption class="card__body">
                 <?php
@@ -581,7 +581,7 @@ $conn->close();
         </div>
         <div class="flex">
             <figure class="card">
-                <img src="src/tattoo/tattoo_tsunami/img6.jpg" width="450px" height="400px"
+                <img src="../src/tattoo/tattoo_tsunami/img6.jpg" width="450px" height="400px"
                     class="card__image" />
                 <figcaption class="card__body">
                 <?php
