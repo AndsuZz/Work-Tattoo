@@ -51,7 +51,7 @@
 
     <nav>
         <ul class="links-tsunami">
-        <li><a href="./home.html">Home</a></li>
+        <li><a href="../home.html">Home</a></li>
 
             <li id="artista"><a href="catalogo_tsunami.html">Sobre o tatuador</a></li>
             <li>
